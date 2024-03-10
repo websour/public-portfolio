@@ -1,0 +1,25 @@
+const colors = {
+  lightBluePrimary: '#61DAFB',
+  lightBlueSecondary: '#e0f5fa',
+  blackBase: '#000000',
+  blackPrimary: '#333',
+  blackSecondary: '#444',
+  lightGray: '#ccc',
+  gray: '#666',
+  white: '#fff',
+  offWhite: '#efefef',
+  red: '#fb0f00',
+  backgroundColoropacity: 'rgba(255,255,255,0.86)',
+  boxShadow: 'rgba(255,255,255,0.86)',
+  skillsCardBoxShadow: 'rgba(0,0,0,.06)',
+  skillsReact: '#5ed3f3',
+  skillsAngular: '#bd002e',
+  skillsVuejs: '#3fb27f',
+  skillsWordpress: '#207195',
+  skillsHtml5: '#dd4b25',
+  skillsCss3Alt: '#146eb1',
+  skillsJs: '#efd81d',
+  skillsPHP: '#4d588e',
+} as const
+
+export default colors
