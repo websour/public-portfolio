@@ -357,6 +357,8 @@ const Home = (): JSX.Element => {
             {skills.map((skill) => (
               <SkillsCardListItem key={skill.id}>
                 <SkillsCard
+                  role="button"
+                  aria-label={`${skill.title}のスキルチャートを表示`}
                   onMouseOver={() => setActiveData(skill.id)}
                   className={`${skill.title} ${activeData === skill.id ? 'is-active' : ''}`}
                 >
@@ -379,12 +381,6 @@ const Home = (): JSX.Element => {
         </SectionInner>
       </SectionContact>
       <Footer />
-      <SupportChatButton onClick={togglePopup}>Q</SupportChatButton>
-      {showPopup && (
-        <SupportChatPopup>
-          <SupportChat />
-        </SupportChatPopup>
-      )}
       </>
       ) : (
         <NowLoadingContainer>

@@ -118,23 +118,23 @@ const ContactForm = (): JSX.Element => {
       <FormInner>
         <Row>
           <Label htmlFor="subject">件名</Label>
-          <Input {...register("subject", { required: "件名は必須です" })} />
-          {errors.subject && <p>{errors.subject.message}</p>}
+          <Input id="subject" {...register("subject", { required: "※件名は必須です" })} />
+          {errors.subject && <p role="alert">{errors.subject.message}</p>}
         </Row>
         <Row>
           <Label htmlFor="name">名前</Label>
-          <Input {...register("name", { required: "名前は必須です" })} />
-          {errors.name && <p>{errors.name.message}</p>}
+          <Input id="name" {...register("name", { required: "※名前は必須です" })} />
+          {errors.name && <p role="alert">{errors.name.message}</p>}
         </Row>
         <Row>
           <Label htmlFor="email">メールアドレス</Label>
-          <Input {...register("email", { required: "メールアドレスは必須です", pattern: { value: /^\S+@\S+\.\S+$/, message: "無効なメールアドレスです" } })} />
-          {errors.email && <p>{errors.email.message}</p>}
+          <Input id="email" {...register("email", { required: "※メールアドレスは必須です", pattern: { value: /^\S+@\S+\.\S+$/, message: "※無効なメールアドレスです" } })} />
+          {errors.email && <p role="alert">{errors.email.message}</p>}
         </Row>
         <Row>
           <Label htmlFor="message">お問い合わせ内容</Label>
-          <Textarea {...register("message", { required: "お問い合わせ内容は必須です" })} />
-          {errors.message && <p>{errors.message.message}</p>}
+          <Textarea id="message" {...register("message", { required: "※お問い合わせ内容は必須です" })} />
+          {errors.message && <p role="alert">{errors.message.message}</p>}
         </Row>
         <Button type="submit">送信</Button>
       </FormInner>

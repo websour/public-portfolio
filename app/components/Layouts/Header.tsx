@@ -54,10 +54,10 @@ const Header = () => {
           PortfolioYS
         </Heading>
         <List>
-          <ListItem><AnchorLink href="#about">About</AnchorLink></ListItem>
-          <ListItem><AnchorLink href="#works">Works</AnchorLink></ListItem>
-          <ListItem><AnchorLink href="#skills">Skills</AnchorLink></ListItem>
-          <ListItem><AnchorLink href="#contact">Contact</AnchorLink></ListItem>
+          <ListItem><AnchorLink href="#about" aria-label="Aboutへのページ内リンク">About</AnchorLink></ListItem>
+          <ListItem><AnchorLink href="#works" aria-label="Worksへのページ内リンク">Works</AnchorLink></ListItem>
+          <ListItem><AnchorLink href="#skills" aria-label="Skillsへのページ内リンク">Skills</AnchorLink></ListItem>
+          <ListItem><AnchorLink href="#contact" aria-label="Contactへのページ内リンク">Contact</AnchorLink></ListItem>
         </List>
       </Inner>
     </HeaderContainer>
