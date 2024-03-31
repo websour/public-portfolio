@@ -9,7 +9,7 @@ const Form = styled.form`
     display: flex;
     align-items: center;
     position: relative;
-    p {
+    div {
       position: absolute;
       bottom: -21px;
       font-weight: bold;
@@ -121,14 +121,14 @@ const LoginForm = (): JSX.Element => {
       <Form onSubmit={handleSubmit(onSubmit)}>
           <Input
             type="password"
-            {...register("password", { required: "パスワードは必須です" })}
+            {...register("password", { required: "※パスワードは必須です" })}
             placeholder="パスワードを入力してください"
           />
-          {errors.password && <p>{errors.password.message}</p>}
+          {errors.password && <div role="alert" aria-live="assertive"><p>{errors.password.message}</p></div>}
           <Button type="submit">ログイン</Button>
       </Form>
     ) : (
-      <NowLoadingContainer>
+      <NowLoadingContainer aria-live="polite">
           <Loading/>
           <p>Now loading...</p>
       </NowLoadingContainer>
