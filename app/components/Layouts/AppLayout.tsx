@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 import Header from "./Header";
 import LoginHeader from "./LoginHeader";
 import Main from "./Main";
+import Footer from "./Footer";
 
 import { ThemeProvider } from 'styled-components';
 import { themes } from '../../themes';
@@ -24,6 +25,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }): JSX.Element => 
         return <Header />;
     }
   };
+  const getFooter = () => pathname !== '/login' && <Footer />;
 
   return (
     <html lang="ja">
@@ -32,6 +34,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }): JSX.Element => 
           <ThemeProvider theme={themes}>
             {getHeader()}
             <Main>{children}</Main>
+            {getFooter()}
           </ThemeProvider>
         </StyledComponentsRegistry>
       </body>

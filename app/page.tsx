@@ -17,12 +17,12 @@ import HeroCanvas from "./components/Pages/Home/HeroCanvas/"
 import WorksCanvas from "./components/Pages/Home/WorksCanvas"
 import WorksContainer from "./components/Pages/Home/WorksContainer"
 import SkillsChart from "./components/Pages/Home/SkillsChart"
-import SupportChat from "./components/Pages/Home/SupportChat"
+// import SupportChat from "./components/Pages/Home/SupportChat"
 import ContactForm from "./components/Pages/Home/ContactForm/"
 import ContactCanvas from "./components/Pages/Home/ContactCanvas"
 import Heading from './components/Heading';
 import Description from './components/Description';
-import Footer from "./components/Layouts/Footer";
+// import Footer from "./components/Layouts/Footer";
 import Loading from './components/Loading';
 
 import styled from "styled-components";
@@ -134,7 +134,7 @@ const SkillsCardList = styled.ul`
   `}
 `
 const SkillsCardListItem = styled.li``
-const SkillsCard = styled.div`
+const SkillsCard = styled.button`
   background-color: ${props => props.theme.colors.white};
   border: solid 1px ${props => props.theme.colors.border};
   border-radius: ${props => props.theme.borderRadius[1]};
@@ -146,6 +146,7 @@ const SkillsCard = styled.div`
   margin-bottom: ${props => props.theme.space[5]};
   font-size: ${props => props.theme.fontSizes.icon};
   color: ${props => props.theme.colors.lightGray};
+  box-sizing: border-box;
   ${props => props.theme.breakpoint.sp`
     width: 72px;
     height: 72px;
@@ -267,7 +268,7 @@ const NowLoadingContainer = styled.div`
   margin-top: -100px;
   width: 100%;
   display: flex;
-  height: calc(100vh - 50px);
+  height: calc(100vh + 56px);
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -357,9 +358,9 @@ const Home = (): JSX.Element => {
             {skills.map((skill) => (
               <SkillsCardListItem key={skill.id}>
                 <SkillsCard
-                  role="button"
                   aria-label={`${skill.title}のスキルチャートを表示`}
-                  onMouseOver={() => setActiveData(skill.id)}
+                  onClick={() => setActiveData(skill.id)}
+                  onKeyDown={(e) => e.key === 'Enter' && setActiveData(skill.id)}
                   className={`${skill.title} ${activeData === skill.id ? 'is-active' : ''}`}
                 >
                   <FontAwesomeIcon icon={skill.icon} />
@@ -380,7 +381,7 @@ const Home = (): JSX.Element => {
           </ContactFormComponent>
         </SectionInner>
       </SectionContact>
-      <Footer />
+      {/* <Footer /> */}
       </>
       ) : (
         <NowLoadingContainer>

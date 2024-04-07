@@ -42,9 +42,9 @@ const ProtectedPage = (): JSX.Element => {
   return (
     <>
     {showContent ? (
-    <LoginFormContainer>
-      <LoginForm />
-    </LoginFormContainer>
+      <LoginFormContainer>
+        <LoginForm />
+      </LoginFormContainer>
     ) : (
       <NowLoadingContainer>
         <Loading/>

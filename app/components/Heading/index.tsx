@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const HeadingComponent = styled.p`
+const HeadingComponent = styled.h2`
   font-size: ${props => props.theme.fontSizes.xxLarge};
   font-weight: bold;
   color: ${props => props.theme.colors.blackPrimary};

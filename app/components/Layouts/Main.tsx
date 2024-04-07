@@ -2,7 +2,9 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components'
 
-const Container = styled.main``
+const Container = styled.main`
+    min-height: 100vh;
+`
 
 interface MainProps {
   children: ReactNode;
